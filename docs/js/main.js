@@ -3,8 +3,7 @@ const contentArea = document.getElementById('content');
 const equationArea = document.getElementById('equation-content');
 const equationMsgArea = document.getElementById('equation-msg');
 const scoreArea = document.getElementById('score-pnt');
-const infoWindow = document.getElementById('overlay-info');
-const scoreWindow = document.getElementById('overlay-score');
+// const scoreWindow = document.getElementById('overlay-score');
 
 const classVisited = 'visited'
 
@@ -15,14 +14,6 @@ const arrVisited = [startCell];
 let isReachGoal = false;
 
 /*** Set event listener ***/
-infoWindow.addEventListener("click", function(e) {
-  infoWindow.classList.remove('is-open');
-})
-
-scoreWindow.addEventListener("click", function(e) {
-  scoreWindow.classList.remove('is-open');
-})
-
 contentArea.addEventListener("mousemove", function(e) {
   moveAction(e.target);
 })
@@ -277,15 +268,6 @@ function restart() {
   equationMsgArea.textContent = '';
   scoreArea.textContent = 0;
   isReachGoal = false;
-}
-
-
-function openInfo() {
-  infoWindow.classList.add('is-open');
-}
-
-function openScore() {
-  scoreWindow.classList.add('is-open');
 }
 
 
