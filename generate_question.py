@@ -10,22 +10,23 @@ JST = timezone(timedelta(hours=+9), 'JST')
 ############################################################
 def main():
     json_dict = {}
-    # 実行 2022.12.20
-    # 対象期間 2022.12.20 - 2023.03.31
-    for i in tqdm(range(102)):
-        date, data = sub_1day(i)
-        json_dict[date] = data
+    start_date = datetime(2023, 3, 1)
+    end_date = datetime(2023, 9, 30)
+    days_num = (end_date - start_date).days + 1
+    for i in tqdm(range(days_num)):
+        date = start_date + timedelta(days=i)
+        data = sub_1day(date)
+        json_dict[date.strftime('%Y.%m.%d')] = data
 
     with open('data.json', 'w', encoding='utf8') as f:
         json.dump(json_dict, f, ensure_ascii=False)
 
 
-def sub_1day(days=0):
+def sub_1day(date):
 
     # table内容
-    today = (datetime.now(JST) + timedelta(days=days)).strftime('%Y.%m.%d')
-    table4, answers4 = get_table(4, days)
-    table5, answers5 = get_table(5, days)
+    table4, answers4 = get_table(4, date)
+    table5, answers5 = get_table(5, date)
 
     def shorten(table):
         return [''.join(row) for row in table]
@@ -41,15 +42,15 @@ def sub_1day(days=0):
         }
     }
 
-    return today, data
+    return data
 
 
-def get_table(size: int, day=0):
+def get_table(size: int, date):
     nums = list(map(str, range(1,10)))
     ops = list('＋－×÷')
 
     # 日ごとの運勢のため、日付8桁表記を乱数のシードとする
-    seed = (datetime.now(JST) + timedelta(days=day)).strftime('%Y%m%d')
+    seed = date.strftime('%Y%m%d')
     random.seed(seed)
 
     table = None
