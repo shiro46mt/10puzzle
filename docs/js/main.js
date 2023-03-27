@@ -15,10 +15,12 @@ let isReachGoal = false;
 
 /*** Set event listener ***/
 contentArea.addEventListener("mousemove", function(e) {
+  e.preventDefault();
   moveAction(e.target);
 })
 
 contentArea.addEventListener("touchmove", function(e) {
+  e.preventDefault();
   var myLocation = e.changedTouches[0];
   var realTarget = document.elementFromPoint(myLocation.clientX, myLocation.clientY);
   moveAction(realTarget);
