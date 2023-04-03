@@ -5,6 +5,10 @@ table {
   margin: 10px auto;
 }
 
+#content {
+  user-select: none;
+}
+
 #content td {
   font-size: 1.5em;
   height: 50px;
