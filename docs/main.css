@@ -134,7 +134,7 @@ table {
   text-decoration: none;
   white-space: nowrap;
   vertical-align: middle;
-  padding: 0 5px;
+  padding: 0;
 }
 
 .fa-brands, .fa-solid{

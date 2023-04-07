@@ -190,10 +190,16 @@ button:hover {
   margin: 10px 0;
 }
 
+.author a {
+  text-decoration: none;
+  color: var(--main-text);
+}
+
 /*** footer ***/
 #footer {
   font-size: 0.8em;
   text-align: center;
   margin: 20px 10px;
+  color: var(--sub-text);
 }
 
