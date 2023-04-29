@@ -126,44 +126,12 @@ table {
   font-size: 1.2rem;
 }
 
-.sns-share {
-  margin-top: 5px;
-}
-.sns-share a {
-  display: inline-block;
-  text-decoration: none;
-  white-space: nowrap;
-  vertical-align: middle;
-  padding: 0;
-}
-
-.fa-brands, .fa-solid{
-  font-size: 24px;
-  padding: 0;
-}
-.fa-square-twitter {
-  color: #1b95e0;
-}
-.fa-square-facebook {
-  color: #3b5998;
-}
-.fa-line {
-  color: #06C755;
-}
-.fa-square {
-  color: #ffffff;
-}
-
 /*** hint ***/
-.overlay-window-hint {
+.hint {
   margin-top: 30px;
 }
 
-.overlay-window-hint h2 {
-  font-size: 1.1em;
-}
-
-.overlay-window-hint .badge {
+.hint .badge {
   text-decoration: none;
   color: var(--main-bg);
   background-color: var(--sub-text);

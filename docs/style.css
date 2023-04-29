@@ -19,14 +19,14 @@ body {
   transition: color 200ms, background-color 200ms;
 
   margin: 0px auto;
-	max-width: 400px;
+	max-width: var(--main-width);
   position: relative;
   overflow: hidden;
 }
 
 .main-content {
-  margin: 20px auto 10px;
-	max-width: 400px;
+  margin: 20px auto;
+	max-width: var(--main-width);
 }
 
 /*** header ***/
@@ -60,17 +60,6 @@ h2 {
   float: none;
 }
 
-.links {
-  margin-top: 5px;
-  margin-right: 5%;
-  float: right;
-  white-space: nowrap;
-}
-.links a {
-  text-decoration: none;
-  color: var(--sub-text);
-}
-
 /*** mode switch ***/
 input[type="checkbox"] {
   display: none;
@@ -79,6 +68,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 5px;
   right: 20px;
+  z-index: 100;
 }
 .switch label {
   cursor: pointer;
@@ -128,7 +118,7 @@ button:hover {
   bottom: 0rem;
   left: 0rem;
   right: 0rem;
-  z-index: 10;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.75);
   align-items: center;
   transition: opacity .5s;
@@ -161,9 +151,11 @@ button:hover {
 
 .close-icon {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
+  padding: 6px;
   color: var(--sub-text);
+  cursor: pointer;
 }
 
 /*** info ***/
@@ -195,11 +187,45 @@ button:hover {
   color: var(--main-text);
 }
 
+/*** sns share ***/
+.sns-share {
+  margin-top: 30px;
+}
+.sns-share a {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.fa-brands, .fa-solid {
+  font-size: 24px;
+  padding: 0;
+}
+.fa-square-twitter {
+  color: #1b95e0;
+}
+.fa-square-facebook {
+  color: #3b5998;
+}
+.fa-line {
+  color: #06C755;
+}
+.fa-square {
+  color: #ffffff;
+}
+
 /*** footer ***/
-#footer {
+#footer, #footer-menu {
   font-size: 0.8em;
   text-align: center;
-  margin: 20px 10px;
+  margin: 10px;
   color: var(--sub-text);
 }
 
+#footer-menu a {
+  text-decoration: none;
+  color: var(--sub-text);
+  cursor: pointer;
+}

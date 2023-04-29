@@ -47,14 +47,9 @@
     </label>
   </div>
 
-<div class="main-content">
+  <div class="main-content">
     <h1>10パズル迷路<span class="badge badge-hard">HARD</span></h1>
     <div class="dot-line"></div>
-
-    <div class="links">
-      <a onclick="openInfo();"><i class="fa-solid fa-circle-question"></i></a>
-      <a onclick="openScore();"><i class="fa-solid fa-gauge-high"></i></a>
-    </div>
     <div class="subtitle">(β版) <span id="today"></span></div>
 
     <div class="overlay" id="overlay-info">
@@ -76,10 +71,10 @@
         <h2>今日の成績<span class="badge badge-hard">HARD</span></h2>
         <div class="today-score">
           <span id="today-score-pnt">0</span> / 25
-          <p id="today-score-msg">Try it!</p>
         </div>
 
         <div class="sns-share">
+          <h2>シェアする</h2>
           <span>
             <a class="fa-stack" href="https://twitter.com/intent/tweet?text=今日の問題にチャレンジ！%0ahttps%3A%2F%2F10puzzle.tk%2F%0a&hashtags=10パズル迷路" target="_blank" id="link-twitter">
               <i class="fa-solid fa-square fa-stack-1x"></i>
@@ -103,7 +98,7 @@
           </span>
         </div>
 
-        <div class="overlay-window-hint">
+        <div class="hint">
           <h2>ヒントを見る</h2>
           <table class="hint-table">
             <tr>
@@ -181,6 +176,12 @@
 
     <button type="button" onclick="restart()">RESET</button>
 
+  </div>
+
+  <div id="footer-menu">
+    |
+    <a onclick="openInfo();">遊び方</a> |
+    <a onclick="openScore();">成績</a> |
   </div>
   <div id="footer">&copy;2022 SHIRO</div>
 

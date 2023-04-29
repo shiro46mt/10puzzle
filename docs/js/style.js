@@ -1,15 +1,25 @@
 
 const infoWindow = document.getElementById('overlay-info');
 const scoreWindow = document.getElementById('overlay-score');
+const closeIcons = document.querySelectorAll('.close-icon');
 
 /*** Set event listener ***/
-infoWindow.addEventListener("click", function(e) {
-  infoWindow.classList.remove('is-open');
-})
+infoWindow.addEventListener("click", function (e) {
+  if (e.target == infoWindow)
+    infoWindow.classList.remove("is-open");
+});
 
-scoreWindow.addEventListener("click", function(e) {
-  scoreWindow.classList.remove('is-open');
-})
+scoreWindow.addEventListener("click", function (e) {
+  if (e.target == scoreWindow)
+    scoreWindow.classList.remove("is-open");
+});
+
+for (var i = 0; i < closeIcons.length; i++) {
+  closeIcons[i].addEventListener('click', function (e) {
+    infoWindow.classList.remove("is-open");
+    scoreWindow.classList.remove("is-open");
+  });
+}
 
 function openInfo() {
   infoWindow.classList.add('is-open');

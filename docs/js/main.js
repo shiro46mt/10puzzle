@@ -194,7 +194,6 @@ function updateScore(score) {
   /* overlay-score */
   if (score > todayScore) {
     document.getElementById('today-score-pnt').textContent = score;
-    document.getElementById('today-score-msg').textContent = diffMsg;
     setTodayScore(score);
     setTweetText();
     return true;
@@ -216,7 +215,6 @@ function initScore() {
 
   /* overlay-score */
   document.getElementById('today-score-pnt').textContent = todayScore;
-  document.getElementById('today-score-msg').textContent = diffMsg;
   setTweetText();
 }
 
@@ -362,7 +360,7 @@ function setTweetText() {
 
   else {
     text = getCookie('lastdate') + crlf;
-    if (size == 5) text += 'HARDモード' + crlf;
+    if (size == 5) text += 'HARDモード🔥' + crlf;
     text += 'Score: ' + score + ' / ' + (size == 4 ? 15 : 25);
   }
 
