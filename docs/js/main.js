@@ -114,6 +114,11 @@ async function moveAction(elem) {
       equationArea.textContent = equation + ' = ' + ans;
       // When cleared
       if (ans == 10) {
+        confetti({
+          particleCount: 100,
+          spread: 80,
+          origin: { y: 0.7 }
+        });
         if (updateScore(score)) {
           await sleep(300);
           scoreWindow.classList.add('is-open');
