@@ -8,13 +8,13 @@
   <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script src="https://kit.fontawesome.com/1d05181571.js" crossorigin="anonymous"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7849150854652075" crossorigin="anonymous"></script>
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7849150854652075" crossorigin="anonymous"></script> -->
 
   <!-- favicon -->
   <link rel="icon" href="/img/favicon.ico" sizes="any">
   <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-  <link rel="manifest" href="/img/manifest.webmanifest">
+  <link rel="manifest" href="/manifest.json">
 
   <meta property="og:url" content="https://10puzzle.tk/"/>
   <meta property="og:title" content="10パズル迷路"/>
@@ -179,6 +179,17 @@
   <script>const size = 4;</script>
   <script src="/js/style.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 
   <script type="text/javascript">
     var nend_params = {"media":72005,"site":368240,"spot":1087074,"type":1,"oriented":1};
