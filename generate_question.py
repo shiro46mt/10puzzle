@@ -10,8 +10,8 @@ JST = timezone(timedelta(hours=+9), 'JST')
 ############################################################
 def main():
     json_dict = {}
-    start_date = datetime(2023, 3, 1)
-    end_date = datetime(2023, 9, 30)
+    start_date = datetime(2023, 11, 1)
+    end_date = datetime(2024, 3, 31)
     days_num = (end_date - start_date).days + 1
     for i in tqdm(range(days_num)):
         date = start_date + timedelta(days=i)
