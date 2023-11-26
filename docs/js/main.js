@@ -31,7 +31,7 @@ contentArea.addEventListener("touchmove", function(e) {
 function getJson() {
   const p = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', '/js/data.json');
+    xhr.open('GET', 'js/data.json');
     xhr.addEventListener('load', (e) => resolve(xhr.response));
     xhr.responseType = 'json';
     xhr.send();
@@ -356,8 +356,8 @@ function getDiffMsg(score) {
 function setTweetText() {
   const crlf = '%0a';
   const link1 = 'https://twitter.com/intent/tweet?text=';
-  const link2 = '%0ahttps%3A%2F%2F10puzzle.tk%2F%0a&hashtags=10パズル迷路';
-  const link2_hard = '%0ahttps%3A%2F%2F10puzzle.tk%2Fhard%2F%0a&hashtags=10パズル迷路';
+  const link2 = '%0ahttps%3A%2F%2Fshiro46mt.github.io%2F10puzzle%2F%0a&hashtags=10パズル迷路';
+  const link2_hard = '%0ahttps%3A%2F%2Fshiro46mt.github.io%2F10puzzle%2Fhard.html%2F%0a&hashtags=10パズル迷路';
 
   let text;
   const score = getTodayScore();
