@@ -1,7 +1,7 @@
 var CACHE_NAME = '10puzzle';
 var urlsToCache = [
     'index.html',
-    'hard/index.html',
+    'hard.html',
     'style.css',
     'main.css',
     'js/style.js',
